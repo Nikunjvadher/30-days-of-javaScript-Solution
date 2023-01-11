@@ -205,6 +205,7 @@ const webTechs = [
   "Node",
   "MongoDB",
 ];
+
 // level 3
 // 1 Copy countries array(Avoid mutation)
 const copiedCountry = [...countries]; // or
@@ -232,26 +233,36 @@ if (countriesWithLand.length > 0) {
 }
 
 // 5 Find the country containing the hightest number of characters in the countries array
-countries.map((a , b)=> {
+countries.map((a, b) => {
   return b.length - a.length;
-})
+});
 console.log(countries[0]); // Afghanistan
 
+// 6 Extract all the countries contain the word 'land' from the countries array and print it as array
+// countries.filter(country => {
+//   let con =   country.includes('land');
+//   return con
+// })
+function landCountries() {
+  let country = countries.filter(country => {
+    return country.toLowerCase().includes('land')
+  })
+  return country
+}
+landCountries()
 
-// 6 Extract all the countries containing only four characters from the countries array and print it as array
-const slicedArray = countries.filter((country)=> {
-    return country.length === 4
-})
+// 7 Extract all the countries containing only four characters from the countries array and print it as array
+const slicedArray = countries.filter((country) => {
+  return country.length === 4;
+});
 console.log(slicedArray);
 
-// 7 Extract all the countries containing two or more words from the countries array and print it as array
-const twoWordCountry = countries.filter(country => country.includes(' '))
+// 8 Extract all the countries containing two or more words from the countries array and print it as array
+const twoWordCountry = countries.filter((country) => country.includes(" "));
 console.log(twoWordCountry);
 
-// 8 Reverse the countries array and capitalize each country and stored it as an array
+// 9 Reverse the countries array and capitalize each country and stored it as an array
 const reverseCountry = countries.reverse().map((country) => {
-   return country.toUpperCase()
-})
+  return country.toUpperCase();
+});
 console.log(reverseCountry);
-
-
