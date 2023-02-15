@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 2</title>
+</head>
+
+<body>
+
+
+    <p id="First-Para">This is First Paragraph</p>
+    <p id="Second-Para">This is Second Paragraph</p>
+    <p id="Third-Para">This is Third Paragraph</p>
+    <p id="Fourth-Para">This is Fourth Paragraph</p>
+
+
+    <script defer="true">
+
+        // Exercise: Level 2
+        // 1 Change stye of each paragraph using JavaScript(eg. color, background, border, font-size, font-family)
+        const para = document.querySelectorAll('p')
+        para.forEach((text, i) => {
+            if (i % 2 == 0) {
+                text.style.backgroundColor = '#00425A';
+                text.style.color = '#EA8FEA';
+                text.style.border = '10px solid #1F8A70';
+                text.style.fontSize = '40px';
+                text.style.fontFamily = 'san-sarif';
+            } else {
+                text.style.backgroundColor = '#BFDB38'
+                text.style.color = '#FFAACF';
+                text.style.border = '10px solid #FC7300';
+                text.style.fontSize = '27px';
+                text.style.fontFamily = 'san-sarif';
+            }
+        })
+        // para[0].style.backgroundColor = 'red'
+        // para[1].style.backgroundColor = 'red'
+        // para[2].style.backgroundColor = 'red'
+        // para[3].style.backgroundColor = 'red'
+
+        // 2 Select all paragraphs and loop through each elements and give the first and third paragraph a color of green, and the second and the fourth paragraph a red color
+        for (i = 0; i < para.length; i++) {
+            if (i == 0 || i == 2) {
+                para[i].style.color = 'green';
+            } else if (i == 1 || i == 3) {
+                para[i].style.color = 'red'
+            }
+        }
+        // 3. Set text content, id and class to each paragraph
+        // loop through each paragraph
+        for (var i = 0; i < para.length; i++) {
+            // set the text content
+            para[i].textContent = "This is paragraph " + (i + 1);
+
+            // set the id
+            para[i].id = "paragraph" + (i + 1);
+
+            // set the class
+            para[i].classList.add("my-paragraph-class");
+        }
+    </script>
+</body>
+
+</html>
