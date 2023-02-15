@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 1</title>
+</head>
+
+<body>
+
+    <p id="First-Para">This is First Paragraph</p>
+    <p id="Second-Para">This is Second Paragraph</p>
+    <p id="Third-Para">This is Third Paragraph</p>
+    <p id="Fourth-Para">This is Fourth Paragraph</p>
+
+
+    <script defer="true">
+        // Exercise: Level 1
+        // 1 Create an index.html file and put four p elements as above: Get the first paragraph by using document.querySelector(tagname) and tag name
+        // const FirstPara = document.querySelector('p')
+        const FirstPara = document.getElementsByTagName('p')
+        console.log(FirstPara[0].innerText);
+
+        // 2 Get each of the the paragraph using document.querySelector('#id') and by their id
+        const para = document.querySelector('#First-Para')
+        console.log(para.innerHTML);
+
+        // 3 Get all the p as nodeList using document.querySelectorAll(tagname) and by their tag name
+        const para2 = document.querySelectorAll('p')
+        console.log(para2);
+
+        // 4 Loop through the nodeList and get the text content of each paragraph
+        const para3 = document.querySelectorAll('p')
+        para3.forEach(text => console.log(text.innerText))
+
+        // 5 Set a text content to paragraph the fourth paragraph,Fourth Paragraph
+        const para4 = document.querySelectorAll('p')
+        para4[3].innerHTML = 'Fourth Paragraph';
+
+        // 6 Set id and class attribute for all the paragraphs using different attribute setting methods
+        const para5 = document.querySelectorAll('p')
+        para5[0].className = '1st'
+        para5[0].id = '1st';
+        console.log(para5[0]);
+
+        para5[1].setAttribute('class', '2nd')
+        para5[1].setAttribute('id', '2nd_id')
+        console.log(para5[1]);
+
+        para5[2].classList.add('3rd')
+        console.log(para5[2]);
+
+    </script>
+</body>
+
+</html>
