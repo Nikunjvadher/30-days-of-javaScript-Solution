@@ -1,0 +1,79 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JavaScript for Everyone:DOM</title>
+    <link rel="stylesheet" href="level3.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Asabeneh Yetayeh challenges in <span>2020</span></h1>
+        <h2>30DaysOfJavaScript Challenge</h2>
+        <h4 id="date"></h4>
+        <ul>
+            <li class="completed">30DaysOfPython Challenge Done</li>
+            <li class="completed">30DaysOfJavaScript Challenge Ongoing</li>
+            <li>30DaysOfReact Challenge Coming</li>
+            <li>30DaysOfFullStack Challenge Coming</li>
+            <li>30DaysOfDataAnalysis Challenge Coming</li>
+            <li>30DaysOfReactNative Challenge Coming</li>
+            <li>30DaysOfMachineLearning Challenge Coming</li>
+        </ul>
+    </div>
+
+    <script>
+        const year = document.querySelector("h1 span");
+        const h4 = document.getElementById("date");
+        const li = document.querySelectorAll("li");
+        // h4.innerHTML = dateFormat
+
+
+        li.forEach((bg) => (bg.style.backgroundColor = "#ff5e33"));
+        li[0].style.backgroundColor = "#00bf90";
+        li[1].style.backgroundColor = "#ecdb31";
+
+        function randomColor() {
+            const r = Math.floor(Math.random() * 255);
+            const g = Math.floor(Math.random() * 255);
+            const b = Math.floor(Math.random() * 255);
+
+            const rgb = `rgb(${r}, ${g} , ${b})`;
+            // console.log(rgb);
+            return rgb;
+        }
+
+
+        // console.log(dateFormat);
+
+        function getMonthName(monthNumber) {
+            const date = new Date();
+            date.setMonth(monthNumber - 1);
+
+            // Using the browser's default locale.
+            return date.toLocaleString([], { month: 'long' });
+        }
+
+        function time(time) {
+            // if(time < 10 ){
+            //    return time = '0' + time;
+            // } else {
+            //   return  time
+            // }
+            // or
+            return time < 10 ? '0' + time : time;
+        }
+
+        setInterval(() => {
+            const date = new Date();
+            const dateFormat = `${getMonthName(date.getMonth())} ${date.getDate()},${date.getFullYear()} ${time(date.getHours())}:${time(date.getMinutes())}:${time(date.getSeconds())}`;
+            h4.innerHTML = dateFormat;
+            h4.style.backgroundColor = randomColor();
+            year.style.color = randomColor();
+        }, 1000);
+
+    </script>
+</body>
+
+</html>
